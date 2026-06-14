@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   GADLY CATERING — styles.css
+   LEGADO CRIOLLO • NOA NOA — styles.css
    #FDFBF7 Blanco Hueso · #D4AF37 Dorado
    #1A2536 Azul Noche   · #B83A14 Terracota
    ═══════════════════════════════════════════════ */
@@ -7,13 +7,12 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --hueso:     #FDFBF7;   /* fondo principal          */
-  --dorado:    #D4AF37;   /* acento / logo             */
-  --azul:      #1A2536;   /* textos, nav, footer       */
-  --terracota: #B83A14;   /* destacados, CTA principal */
-  --whatsapp:  #25D366;   /* botón WhatsApp            */
-
-  --text-soft: #4a5568;   /* párrafos                  */
+  --hueso:     #FDFBF7;
+  --dorado:    #D4AF37;
+  --azul:      #1A2536;
+  --terracota: #B83A14;
+  --whatsapp:  #25D366;
+  --text-soft: #4a5568;
   --borde:     rgba(26,37,54,0.1);
   --radius: 14px;
 }
@@ -27,28 +26,52 @@ body {
   overflow-x: hidden;
 }
 
+/* ── TOP BANNER ──────────────────────────────── */
+.top-banner {
+  background: var(--azul);
+  color: var(--hueso);
+  text-align: center;
+  font-size: 13px;
+  padding: 10px 20px;
+  letter-spacing: .01em;
+  line-height: 1.5;
+}
+.top-banner strong { color: var(--dorado); }
+
 /* ── NAV ─────────────────────────────────────── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: sticky; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 16px 60px;
-  background: rgba(253,251,247,0.94);
+  padding: 12px 60px;
+  background: rgba(253,251,247,0.96);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--borde);
+  box-shadow: 0 2px 12px rgba(26,37,54,0.06);
 }
 .nav-logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.nav-logo-img {
+  width: 54px; height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--dorado);
+}
+.nav-logo-text {
+  display: flex; flex-direction: column; line-height: 1.2;
+}
+.nav-logo-main {
   font-family: 'Playfair Display', serif;
-  font-size: 22px; font-weight: 900;
+  font-size: 16px; font-weight: 900;
   color: var(--azul);
-  display: flex; align-items: center; gap: 10px;
 }
-.nav-logo-dot {
-  width: 32px; height: 32px; border-radius: 50%;
-  background: var(--terracota);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 15px;
+.nav-logo-sub {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--terracota);
 }
-.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
 .nav-links a {
   text-decoration: none; font-size: 14px; font-weight: 500;
   color: var(--azul); transition: color .2s;
@@ -64,8 +87,8 @@ nav {
 
 /* ── HERO ────────────────────────────────────── */
 .hero {
-  min-height: 100vh;
-  padding: 120px 60px 60px;
+  min-height: 92vh;
+  padding: 80px 60px 60px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -89,10 +112,9 @@ nav {
 }
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(40px, 5vw, 66px);
+  font-size: clamp(38px, 5vw, 64px);
   font-weight: 900; line-height: 1.06;
-  color: var(--azul);
-  margin-bottom: 20px;
+  color: var(--azul); margin-bottom: 20px;
 }
 .hero-title em { font-style: normal; color: var(--terracota); }
 .hero-desc {
@@ -100,9 +122,9 @@ nav {
   color: var(--text-soft);
   max-width: 440px; margin-bottom: 36px;
 }
+.hero-desc strong { color: var(--azul); font-weight: 700; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
-/* Botón WhatsApp principal */
 .btn-whatsapp {
   display: inline-flex; align-items: center; gap: 10px;
   background: var(--whatsapp); color: #fff;
@@ -114,7 +136,6 @@ nav {
 .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); }
 .btn-whatsapp svg { width: 20px; height: 20px; fill: #fff; }
 
-/* Botón secundario */
 .btn-outline {
   background: transparent; color: var(--azul);
   border: 2px solid var(--azul); border-radius: 30px;
@@ -133,7 +154,6 @@ nav {
 }
 .hero-socials a:hover { background: var(--terracota); transform: translateY(-2px); }
 
-/* Imagen flotante */
 .hero-img-wrap {
   position: relative;
   display: flex; align-items: center; justify-content: center;
@@ -212,6 +232,7 @@ nav {
 /* ── BLOG / TESTIMONIOS ──────────────────────── */
 .blog { padding: 90px 60px; background: var(--hueso); }
 .blog .section-title { color: var(--azul); }
+.blog .section-label { color: var(--terracota); }
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -266,8 +287,7 @@ nav {
 .cta-split-text h2 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(28px, 3vw, 44px); font-weight: 900;
-  line-height: 1.15; margin-bottom: 20px;
-  color: var(--azul);
+  line-height: 1.15; margin-bottom: 20px; color: var(--azul);
 }
 .cta-split-text p {
   font-size: 15px; line-height: 1.8;
@@ -290,15 +310,29 @@ nav {
 /* ── FOOTER ──────────────────────────────────── */
 footer {
   background: var(--azul);
-  border-top: 2px solid var(--terracota);
+  border-top: 3px solid var(--dorado);
   color: rgba(253,251,247,0.7);
   padding: 36px 60px;
   display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 16px;
+  flex-wrap: wrap; gap: 20px;
 }
-.footer-logo {
+.footer-brand {
+  display: flex; align-items: center; gap: 14px;
+}
+.footer-logo-img {
+  width: 52px; height: 52px;
+  border-radius: 50%; object-fit: cover;
+  border: 2px solid var(--dorado);
+}
+.footer-logo-main {
   font-family: 'Playfair Display', serif;
-  font-size: 20px; font-weight: 900; color: var(--hueso);
+  font-size: 17px; font-weight: 900; color: var(--hueso);
+  line-height: 1.2;
+}
+.footer-logo-sub {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--dorado);
 }
 .footer-links { display: flex; gap: 28px; list-style: none; }
 .footer-links a {
@@ -310,9 +344,9 @@ footer {
 
 /* ── RESPONSIVE ──────────────────────────────── */
 @media (max-width: 900px) {
-  nav { padding: 16px 24px; }
+  nav { padding: 12px 20px; }
   .nav-links { display: none; }
-  .hero { grid-template-columns: 1fr; padding: 100px 24px 48px; text-align: center; }
+  .hero { grid-template-columns: 1fr; padding: 60px 24px 48px; text-align: center; }
   .hero-img-wrap { order: -1; }
   .hero-img-circle { width: 280px; height: 280px; }
   .hero-desc { margin: 0 auto 28px; }
@@ -325,8 +359,10 @@ footer {
   .blog-grid { grid-template-columns: 1fr; }
   .cta-split { grid-template-columns: 1fr; padding: 60px 24px; }
   footer { padding: 28px 24px; flex-direction: column; text-align: center; }
+  .footer-brand { justify-content: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
 }
 @media (max-width: 480px) {
   .features-grid { grid-template-columns: 1fr; }
-  .hero-title { font-size: 36px; }
+  .hero-title { font-size: 34px; }
 }
