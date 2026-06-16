@@ -30,7 +30,7 @@
     <li><a href="#cta">Nosotros</a></li>
     <li><a href="#footer">Contacto</a></li>
   </ul>
-  <button class="nav-cta">Reservar ahora</button>
+  <button class="nav-cta" onclick="abrirBuffet()">Reservar ahora</button>
 </nav>
 
 <!-- HERO -->
@@ -44,13 +44,11 @@
       Descubre la perfecta combinación de ingredientes frescos, recetas heredadas y una presentación de alto nivel. Con <strong>Legado Criollo • Noa Noa</strong>, tú armas el menú a tu gusto: entradas perfectas y segundos memorables listos para servir y compartir en familia.
     </p>
     <div class="hero-actions">
-      <a href="https://wa.me/51987654321?text=Hola,%20quiero%20info%20sobre%20el%20buffet%20criollo" class="btn-whatsapp" target="_blank">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
+      <a href="https://wa.me/51904609346?text=Hola,%20quiero%20info%20sobre%20el%20buffet%20criollo" class="btn-whatsapp" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Pedir por WhatsApp
       </a>
-      <button class="btn-outline" id="btn-buffet">Arma tu Buffet</button>
+      <button class="btn-outline" onclick="abrirBuffet()">Arma tu Buffet</button>
     </div>
     <div class="hero-socials">
       <a href="#" title="Facebook">f</a>
@@ -70,54 +68,19 @@
   </div>
 </section>
 
-
-
-
 <!-- FEATURES -->
 <section class="features" id="features">
   <p class="section-label">Lo que ofrecemos</p>
   <h2 class="section-title">Nuestros Servicios</h2>
   <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">🍽️</div>
-      <div class="feature-name">Menú Personalizado</div>
-      <p class="feature-desc">Diseñamos el menú perfecto para tu evento, adaptado a tus gustos y presupuesto.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🚀</div>
-      <div class="feature-name">Entrega Puntual</div>
-      <p class="feature-desc">Tu comida llega fresca y lista a tiempo, garantizado. Sin excusas.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🫕</div>
-      <div class="feature-name">Cocina Criolla</div>
-      <p class="feature-desc">Recetas tradicionales peruanas con el toque y sazón de siempre, como en casa.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📋</div>
-      <div class="feature-name">Gestión de Eventos</div>
-      <p class="feature-desc">Te acompañamos en cada detalle: desde la planificación hasta el último plato.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🥗</div>
-      <div class="feature-name">Opciones Variadas</div>
-      <p class="feature-desc">Amplia selección de platos para todos los gustos sin sacrificar el sabor.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">✅</div>
-      <div class="feature-name">Calidad Garantizada</div>
-      <p class="feature-desc">Ingredientes frescos del día, cada plato pasa control de calidad estricto.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📸</div>
-      <div class="feature-name">Presentación Premium</div>
-      <p class="feature-desc">Montaje visual impecable que impresiona a tus invitados desde el primer momento.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🏢</div>
-      <div class="feature-name">Catering Corporativo</div>
-      <p class="feature-desc">Soluciones para empresas: almuerzos, conferencias y celebraciones de equipo.</p>
-    </div>
+    <div class="feature-card"><div class="feature-icon">🍽️</div><div class="feature-name">Menú Personalizado</div><p class="feature-desc">Diseñamos el menú perfecto para tu evento, adaptado a tus gustos y presupuesto.</p></div>
+    <div class="feature-card"><div class="feature-icon">🚀</div><div class="feature-name">Entrega Puntual</div><p class="feature-desc">Tu comida llega fresca y lista a tiempo, garantizado. Sin excusas.</p></div>
+    <div class="feature-card"><div class="feature-icon">🫕</div><div class="feature-name">Cocina Criolla</div><p class="feature-desc">Recetas tradicionales peruanas con el toque y sazón de siempre, como en casa.</p></div>
+    <div class="feature-card"><div class="feature-icon">📋</div><div class="feature-name">Gestión de Eventos</div><p class="feature-desc">Te acompañamos en cada detalle: desde la planificación hasta el último plato.</p></div>
+    <div class="feature-card"><div class="feature-icon">🥗</div><div class="feature-name">Opciones Variadas</div><p class="feature-desc">Amplia selección de platos para todos los gustos sin sacrificar el sabor.</p></div>
+    <div class="feature-card"><div class="feature-icon">✅</div><div class="feature-name">Calidad Garantizada</div><p class="feature-desc">Ingredientes frescos del día, cada plato pasa control de calidad estricto.</p></div>
+    <div class="feature-card"><div class="feature-icon">📸</div><div class="feature-name">Presentación Premium</div><p class="feature-desc">Montaje visual impecable que impresiona a tus invitados desde el primer momento.</p></div>
+    <div class="feature-card"><div class="feature-icon">🏢</div><div class="feature-name">Catering Corporativo</div><p class="feature-desc">Soluciones para empresas: almuerzos, conferencias y celebraciones de equipo.</p></div>
   </div>
 </section>
 
@@ -127,51 +90,30 @@
   <h2 class="section-title">Nuestros Clientes Opinan</h2>
   <div class="blog-grid">
     <div class="blog-card">
-      <img class="blog-card-img"
-        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80"
-        alt="Cena de alta cocina"
-        onerror="this.style.background='#D4AF37';"
-      />
+      <img class="blog-card-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Cena de alta cocina" onerror="this.style.background='#D4AF37';"/>
       <div class="blog-card-body">
         <span class="blog-card-tag">Bodas</span>
         <div class="blog-card-title">Alta cocina para nuestra boda soñada</div>
         <p class="blog-card-desc">El servicio fue perfecto de principio a fin. Los invitados no pararon de elogiar cada plato.</p>
-        <div class="blog-card-footer">
-          <button class="btn-read">Leer más →</button>
-          <span class="blog-likes">♥ 48</span>
-        </div>
+        <div class="blog-card-footer"><button class="btn-read">Leer más →</button><span class="blog-likes">♥ 48</span></div>
       </div>
     </div>
     <div class="blog-card">
-      <img class="blog-card-img"
-        src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600&q=80"
-        alt="Buffet corporativo"
-        onerror="this.style.background='#D4AF37';"
-      />
+      <img class="blog-card-img" src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600&q=80" alt="Buffet corporativo" onerror="this.style.background='#D4AF37';"/>
       <div class="blog-card-body">
         <span class="blog-card-tag">Corporativo</span>
         <div class="blog-card-title">Buffet ejecutivo para 200 personas</div>
         <p class="blog-card-desc">Organizaron el catering de nuestra conferencia anual con total profesionalismo.</p>
-        <div class="blog-card-footer">
-          <button class="btn-read">Leer más →</button>
-          <span class="blog-likes">♥ 31</span>
-        </div>
+        <div class="blog-card-footer"><button class="btn-read">Leer más →</button><span class="blog-likes">♥ 31</span></div>
       </div>
     </div>
     <div class="blog-card">
-      <img class="blog-card-img"
-        src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80"
-        alt="Desayuno gourmet"
-        onerror="this.style.background='#D4AF37';"
-      />
+      <img class="blog-card-img" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="Desayuno gourmet" onerror="this.style.background='#D4AF37';"/>
       <div class="blog-card-body">
         <span class="blog-card-tag">Social</span>
         <div class="blog-card-title">Desayuno gourmet para mi cumpleaños</div>
         <p class="blog-card-desc">Superaron todas mis expectativas. Cada detalle fue cuidado y la comida estuvo deliciosa.</p>
-        <div class="blog-card-footer">
-          <button class="btn-read">Leer más →</button>
-          <span class="blog-likes">♥ 72</span>
-        </div>
+        <div class="blog-card-footer"><button class="btn-read">Leer más →</button><span class="blog-likes">♥ 72</span></div>
       </div>
     </div>
   </div>
@@ -181,20 +123,12 @@
 <section class="cta-split" id="cta">
   <div class="cta-split-text">
     <h2>Hacemos tu evento perfecto, paso a paso</h2>
-    <p>
-      Desde la primera consulta hasta el último bocado, nuestro equipo se encarga de todo. Tú solo disfruta el momento y el sabor criollo de siempre.
-    </p>
-    <p>
-      Años de tradición y experiencia nos respaldan. Calidad, puntualidad y el sabor auténtico del Perú en cada servicio.
-    </p>
+    <p>Desde la primera consulta hasta el último bocado, nuestro equipo se encarga de todo. Tú solo disfruta el momento y el sabor criollo de siempre.</p>
+    <p>Años de tradición y experiencia nos respaldan. Calidad, puntualidad y el sabor auténtico del Perú en cada servicio.</p>
     <a href="#" class="cta-link">Conoce nuestra historia →</a>
   </div>
   <div class="cta-split-img">
-    <img
-      src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80"
-      alt="Platos de catering premium"
-      onerror="this.style.background='#D4AF37'; this.removeAttribute('src');"
-    />
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80" alt="Platos de catering premium" onerror="this.style.background='#D4AF37'; this.removeAttribute('src');"/>
   </div>
 </section>
 
@@ -208,345 +142,172 @@
     </div>
   </div>
   <ul class="footer-links">
-    <li><a href="tel:+51987654321">📞 +51 987 654 321</a></li>
+    <li><a href="tel:+51904609346">📞 +51 904 609 346</a></li>
     <li><a href="mailto:info@legadocriollo.pe">✉ info@legadocriollo.pe</a></li>
     <li><a href="#">📍 Lima, Perú</a></li>
   </ul>
   <p class="footer-copy">© 2026 Legado Criollo • Noa Noa. Todos los derechos reservados.</p>
 </footer>
 
-<script src="main.js"></script>
-<script>
-/* ── Buffet sticky-scroll animation ── */
-(function() {
-  const steps = document.querySelectorAll('.buffet-step');
-  const dots  = document.querySelectorAll('.buffet-dot');
-  const imgs  = document.querySelectorAll('.buffet-img-frame img');
+<!-- ══════════════════════════════════════
+     MODAL: ARMA TU BUFFET
+     Sticky scroll: imagen fija izq + pasos der
+     ══════════════════════════════════════ -->
+<div id="buffet-modal">
+  <div id="buffet-inner">
 
-  function activateStep(n) {
-    steps.forEach(s => s.classList.remove('active'));
-    dots.forEach(d  => d.classList.remove('active'));
-    imgs.forEach(i  => i.classList.remove('active'));
-    const s = document.querySelector('.buffet-step[data-step="' + n + '"]');
-    const d = document.querySelector('.buffet-dot[data-step="'  + n + '"]');
-    const i = document.getElementById('bimg-' + n);
-    if (s) s.classList.add('active');
-    if (d) d.classList.add('active');
-    if (i) i.classList.add('active');
-  }
+    <!-- Header -->
+    <div id="bm-header">
+      <div id="bm-logo">🍽️ Arma tu Buffet — <span>Legado Criollo</span></div>
+      <button id="bm-close" onclick="cerrarBuffet()" title="Cerrar">✕</button>
+    </div>
 
-  /* IntersectionObserver per step */
-  const io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        activateStep(entry.target.dataset.step);
-      }
-    });
-  }, { rootMargin: '-35% 0px -35% 0px', threshold: 0 });
-
-  steps.forEach(function(s) { io.observe(s); });
-
-  /* Dot clicks */
-  dots.forEach(function(d) {
-    d.addEventListener('click', function() {
-      const target = document.querySelector('.buffet-step[data-step="' + d.dataset.step + '"]');
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
-  });
-})();
-</script>
-
-<!-- ══ BUFFET OVERLAY ══ -->
-<div id="buffet-overlay" role="dialog" aria-modal="true" aria-label="Arma tu Buffet">
-
-  <!-- Top nav -->
-  <div class="bov-nav">
-    <span class="bov-title">🍽️ Arma tu Buffet — Legado Criollo</span>
-    <button class="bov-close" id="bov-close-btn" title="Cerrar">✕</button>
-  </div>
-
-  <!-- Progress tabs -->
-  <div class="bov-progress" id="bov-tabs">
-    <div class="bov-tab active" data-step="1">① Entradas</div>
-    <div class="bov-tab"       data-step="2">② Segundos</div>
-    <div class="bov-tab"       data-step="3">③ Personas &amp; Pedido</div>
-  </div>
-
-  <!-- Body: sticky + scroll -->
-  <div class="bov-body">
-
-    <!-- ── Sticky image col ── -->
-    <div class="bov-sticky-col">
-      <div class="bov-img-wrap">
-        <!-- step 1 images -->
-        <img class="vis bov-simg" data-step="1"
-          src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80"
-          alt="Entradas criollas" />
-        <!-- step 2 images -->
-        <img class="bov-simg" data-step="2"
-          src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600&q=80"
-          alt="Segundos criollos" />
-        <!-- step 3 image -->
-        <img class="bov-simg" data-step="3"
-          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80"
-          alt="Buffet listo para servir" />
+    <!-- Steps nav -->
+    <div id="bm-steps-nav">
+      <div class="bm-snav active" data-step="1" onclick="scrollToStep(1)">
+        <span class="bm-snav-num">01</span>
+        <span class="bm-snav-label">Entradas</span>
       </div>
-      <!-- Live summary -->
-      <div class="bov-sticky-summary" id="bov-summary">
-        Selecciona tus platos para ver el resumen aquí.
+      <div class="bm-snav-sep"></div>
+      <div class="bm-snav" data-step="2" onclick="scrollToStep(2)">
+        <span class="bm-snav-num">02</span>
+        <span class="bm-snav-label">Segundos</span>
+      </div>
+      <div class="bm-snav-sep"></div>
+      <div class="bm-snav" data-step="3" onclick="scrollToStep(3)">
+        <span class="bm-snav-num">03</span>
+        <span class="bm-snav-label">Personas & Pedido</span>
       </div>
     </div>
 
-    <!-- ── Scroll col ── -->
-    <div class="bov-scroll-col">
+    <!-- Body: sticky left + scroll right -->
+    <div id="bm-body">
 
-      <!-- ════ PASO 1: ENTRADAS ════ -->
-      <div class="bov-step in-view" id="bov-step-1" data-step="1">
-        <p class="bov-step-eyebrow">Paso 01 de 03</p>
-        <h3 class="bov-step-title">Elige tus Entradas</h3>
-        <p class="bov-step-desc">Selecciona una o más entradas criollas para tu buffet. Todos elaborados con ingredientes frescos del día.</p>
-        <div class="bov-dishes" id="dishes-entradas">
-          <div class="bov-dish" data-cat="entrada" data-name="Ceviche Clásico">
-            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=300&q=70" alt="Ceviche Clásico"/>
-            <div class="bov-dish-name">Ceviche Clásico</div>
-            <div class="bov-dish-check">✓</div>
-          </div>
-          <div class="bov-dish" data-cat="entrada" data-name="Papa a la Huancaína">
-            <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=300&q=70" alt="Papa a la Huancaína"/>
-            <div class="bov-dish-name">Papa a la Huancaína</div>
-            <div class="bov-dish-check">✓</div>
-          </div>
-          <div class="bov-dish" data-cat="entrada" data-name="Causa Limeña">
-            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300&q=70" alt="Causa Limeña"/>
-            <div class="bov-dish-name">Causa Limeña</div>
-            <div class="bov-dish-check">✓</div>
-          </div>
-          <div class="bov-dish" data-cat="entrada" data-name="Anticuchos de Corazón">
-            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=300&q=70" alt="Anticuchos"/>
-            <div class="bov-dish-name">Anticuchos de Corazón</div>
-            <div class="bov-dish-check">✓</div>
-          </div>
-          <div class="bov-dish" data-cat="entrada" data-name="Tiradito">
-            <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=300&q=70" alt="Tiradito"/>
-            <div class="bov-dish-name">Tiradito</div>
-            <div class="bov-dish-check">✓</div>
-          </div>
-          <div class="bov-dish" data-cat="entrada" data-name="Ocopa Arequipeña">
-            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=300&q=70" alt="Ocopa"/>
-            <div class="bov-dish-name">Ocopa Arequipeña</div>
-            <div class="bov-dish-check">✓</div>
-          </div>
+      <!-- Sticky LEFT panel -->
+      <div id="bm-left">
+        <div id="bm-img-wrap">
+          <img class="bm-img active" id="bimg1" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80" alt="Entradas"/>
+          <img class="bm-img"        id="bimg2" src="https://images.unsplash.com/photo-1555244162-803834f70033?w=700&q=80" alt="Segundos"/>
+          <img class="bm-img"        id="bimg3" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=80" alt="Buffet"/>
+          <div id="bm-step-badge">Paso <span id="bm-badge-num">1</span> de 3</div>
+        </div>
+        <div id="bm-live-summary">
+          <div id="bm-summary-title">Tu selección</div>
+          <div id="bm-summary-body">Selecciona platos para ver el resumen aquí.</div>
         </div>
       </div>
 
-      <!-- ════ PASO 2: SEGUNDOS ════ -->
-      <div class="bov-step" id="bov-step-2" data-step="2">
-        <p class="bov-step-eyebrow">Paso 02 de 03</p>
-        <h3 class="bov-step-title">Selecciona tus Segundos</h3>
-        <p class="bov-step-desc">Los platos fuertes criollos más queridos. Elige uno o varios para tu buffet.</p>
-        <div class="bov-dishes" id="dishes-segundos">
-          <div class="bov-dish" data-cat="segundo" data-name="Aji de Gallina">
-            <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=300&q=70" alt="Aji de Gallina"/>
-            <div class="bov-dish-name">Ají de Gallina</div>
-            <div class="bov-dish-check">✓</div>
-          </div>
-          <div class="bov-dish" data-cat="segundo" data-name="Lomo Saltado">
-            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&q=70" alt="Lomo Saltado"/>
-            <div class="bov-dish-name">Lomo Saltado</div>
-            <div class="bov-dish-check">✓</div>
-          </div>
-          <div class="bov-dish" data-cat="segundo" data-name="Seco de Pollo">
-            <img src="https://images.unsplash.com/photo-1546069901-d5bfd2cbfb1f?w=300&q=70" alt="Seco de Pollo"/>
-            <div class="bov-dish-name">Seco de Pollo</div>
-            <div class="bov-dish-check">✓</div>
-          </div>
-          <div class="bov-dish" data-cat="segundo" data-name="Arroz con Leche">
-            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=300&q=70" alt="Carapulcra"/>
-            <div class="bov-dish-name">Carapulcra</div>
-            <div class="bov-dish-check">✓</div>
-          </div>
-          <div class="bov-dish" data-cat="segundo" data-name="Pollo a la Brasa">
-            <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=300&q=70" alt="Pollo a la Brasa"/>
-            <div class="bov-dish-name">Pollo a la Brasa</div>
-            <div class="bov-dish-check">✓</div>
-          </div>
-          <div class="bov-dish" data-cat="segundo" data-name="Arroz con Mariscos">
-            <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=300&q=70" alt="Arroz con Mariscos"/>
-            <div class="bov-dish-name">Arroz con Mariscos</div>
-            <div class="bov-dish-check">✓</div>
+      <!-- Scroll RIGHT panel -->
+      <div id="bm-right">
+
+        <!-- PASO 1: ENTRADAS -->
+        <div class="bm-step" id="bm-step-1" data-step="1">
+          <p class="bm-eyebrow">Paso 01 — Entradas</p>
+          <h2 class="bm-title">Elige tus Entradas</h2>
+          <p class="bm-desc">Selecciona una o más entradas criollas. Elaboradas con ingredientes frescos del día.</p>
+          <div class="bm-dishes">
+            <div class="bm-dish" data-name="Ceviche Clásico" data-cat="entrada" onclick="toggleDish(this)">
+              <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=70" alt="Ceviche Clásico"/>
+              <div class="bm-dish-info"><span class="bm-dish-name">Ceviche Clásico</span></div>
+              <div class="bm-dish-check">✓</div>
+            </div>
+            <div class="bm-dish" data-name="Papa a la Huancaína" data-cat="entrada" onclick="toggleDish(this)">
+              <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&q=70" alt="Papa a la Huancaína"/>
+              <div class="bm-dish-info"><span class="bm-dish-name">Papa a la Huancaína</span></div>
+              <div class="bm-dish-check">✓</div>
+            </div>
+            <div class="bm-dish" data-name="Causa Limeña" data-cat="entrada" onclick="toggleDish(this)">
+              <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=70" alt="Causa Limeña"/>
+              <div class="bm-dish-info"><span class="bm-dish-name">Causa Limeña</span></div>
+              <div class="bm-dish-check">✓</div>
+            </div>
+            <div class="bm-dish" data-name="Anticuchos de Corazón" data-cat="entrada" onclick="toggleDish(this)">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=70" alt="Anticuchos"/>
+              <div class="bm-dish-info"><span class="bm-dish-name">Anticuchos de Corazón</span></div>
+              <div class="bm-dish-check">✓</div>
+            </div>
+            <div class="bm-dish" data-name="Tiradito" data-cat="entrada" onclick="toggleDish(this)">
+              <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=400&q=70" alt="Tiradito"/>
+              <div class="bm-dish-info"><span class="bm-dish-name">Tiradito</span></div>
+              <div class="bm-dish-check">✓</div>
+            </div>
+            <div class="bm-dish" data-name="Ocopa Arequipeña" data-cat="entrada" onclick="toggleDish(this)">
+              <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=70" alt="Ocopa"/>
+              <div class="bm-dish-info"><span class="bm-dish-name">Ocopa Arequipeña</span></div>
+              <div class="bm-dish-check">✓</div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- ════ PASO 3: PERSONAS Y PEDIDO ════ -->
-      <div class="bov-step" id="bov-step-3" data-step="3">
-        <p class="bov-step-eyebrow">Paso 03 de 03</p>
-        <h3 class="bov-step-title">¿Para cuántas personas?</h3>
-        <p class="bov-step-desc">Ajusta la cantidad de invitados y finaliza tu pedido por WhatsApp.</p>
-
-        <div class="bov-qty-wrap">
-          <div class="bov-qty-row">
-            <span class="bov-qty-label">Personas</span>
-            <button class="bov-qty-btn" id="qty-minus">−</button>
-            <span  class="bov-qty-num" id="qty-num">20</span>
-            <button class="bov-qty-btn" id="qty-plus">+</button>
+        <!-- PASO 2: SEGUNDOS -->
+        <div class="bm-step" id="bm-step-2" data-step="2">
+          <p class="bm-eyebrow">Paso 02 — Segundos</p>
+          <h2 class="bm-title">Selecciona tus Segundos</h2>
+          <p class="bm-desc">Los platos fuertes criollos más queridos. Elige uno o varios para tu buffet.</p>
+          <div class="bm-dishes">
+            <div class="bm-dish" data-name="Ají de Gallina" data-cat="segundo" onclick="toggleDish(this)">
+              <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&q=70" alt="Ají de Gallina"/>
+              <div class="bm-dish-info"><span class="bm-dish-name">Ají de Gallina</span></div>
+              <div class="bm-dish-check">✓</div>
+            </div>
+            <div class="bm-dish" data-name="Lomo Saltado" data-cat="segundo" onclick="toggleDish(this)">
+              <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=70" alt="Lomo Saltado"/>
+              <div class="bm-dish-info"><span class="bm-dish-name">Lomo Saltado</span></div>
+              <div class="bm-dish-check">✓</div>
+            </div>
+            <div class="bm-dish" data-name="Seco de Pollo" data-cat="segundo" onclick="toggleDish(this)">
+              <img src="https://images.unsplash.com/photo-1546069901-d5bfd2cbfb1f?w=400&q=70" alt="Seco de Pollo"/>
+              <div class="bm-dish-info"><span class="bm-dish-name">Seco de Pollo</span></div>
+              <div class="bm-dish-check">✓</div>
+            </div>
+            <div class="bm-dish" data-name="Carapulcra" data-cat="segundo" onclick="toggleDish(this)">
+              <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&q=70" alt="Carapulcra"/>
+              <div class="bm-dish-info"><span class="bm-dish-name">Carapulcra</span></div>
+              <div class="bm-dish-check">✓</div>
+            </div>
+            <div class="bm-dish" data-name="Pollo a la Brasa" data-cat="segundo" onclick="toggleDish(this)">
+              <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=400&q=70" alt="Pollo a la Brasa"/>
+              <div class="bm-dish-info"><span class="bm-dish-name">Pollo a la Brasa</span></div>
+              <div class="bm-dish-check">✓</div>
+            </div>
+            <div class="bm-dish" data-name="Arroz con Mariscos" data-cat="segundo" onclick="toggleDish(this)">
+              <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&q=70" alt="Arroz con Mariscos"/>
+              <div class="bm-dish-info"><span class="bm-dish-name">Arroz con Mariscos</span></div>
+              <div class="bm-dish-check">✓</div>
+            </div>
           </div>
-          <p class="bov-qty-note">Mínimo 10 personas · Se cobra por persona</p>
         </div>
 
-        <!-- Final summary + WhatsApp -->
-        <div class="bov-final" id="bov-final">
-          <div class="bov-final-title">Resumen de tu Buffet</div>
-          <div class="bov-final-list" id="bov-final-list">
-            Selecciona platos en los pasos anteriores.
+        <!-- PASO 3: PERSONAS -->
+        <div class="bm-step" id="bm-step-3" data-step="3">
+          <p class="bm-eyebrow">Paso 03 — Personas & Pedido</p>
+          <h2 class="bm-title">¿Para cuántas personas?</h2>
+          <p class="bm-desc">Ajusta la cantidad de invitados y confirma tu pedido por WhatsApp.</p>
+
+          <div id="bm-qty-box">
+            <button class="bm-qty-btn" onclick="cambiarQty(-5)">−5</button>
+            <button class="bm-qty-btn" onclick="cambiarQty(-1)">−</button>
+            <span id="bm-qty-display">20</span>
+            <button class="bm-qty-btn" onclick="cambiarQty(1)">+</button>
+            <button class="bm-qty-btn" onclick="cambiarQty(5)">+5</button>
           </div>
-          <a class="bov-wa-btn" id="bov-wa-link" href="#" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Pedir por WhatsApp
-          </a>
+          <p id="bm-qty-note">Mínimo 10 personas · Se cobra por persona</p>
+
+          <div id="bm-final-card">
+            <div id="bm-final-title">📋 Resumen de tu Buffet</div>
+            <div id="bm-final-content">Selecciona platos en los pasos anteriores.</div>
+            <a id="bm-wa-btn" href="#" target="_blank">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Confirmar Buffet por WhatsApp
+            </a>
+          </div>
         </div>
-      </div>
 
-    </div><!-- /bov-scroll-col -->
-  </div><!-- /bov-body -->
-</div><!-- /buffet-overlay -->
+      </div><!-- /bm-right -->
+    </div><!-- /bm-body -->
+  </div><!-- /bm-inner -->
+</div><!-- /buffet-modal -->
 
-<script>
-/* ══ BUFFET OVERLAY JS ══ */
-(function () {
-  var overlay   = document.getElementById('buffet-overlay');
-  var openBtn   = document.getElementById('btn-buffet');
-  var closeBtn  = document.getElementById('bov-close-btn');
-  var tabs      = document.querySelectorAll('.bov-tab');
-  var steps     = document.querySelectorAll('.bov-step');
-  var sImgs     = document.querySelectorAll('.bov-simg');
-  var summary   = document.getElementById('bov-summary');
-  var finalList = document.getElementById('bov-final-list');
-  var waLink    = document.getElementById('bov-wa-link');
-  var qtyNum    = document.getElementById('qty-num');
-  var qtyMinus  = document.getElementById('qty-minus');
-  var qtyPlus   = document.getElementById('qty-plus');
-  var qty = 20;
-  var selected = {};      // name -> cat
-
-  /* ── open / close ── */
-  function openOverlay() {
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    overlay.scrollTop = 0;
-    // reset to step1 view
-    setActiveStep('1');
-  }
-  function closeOverlay() {
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  if (openBtn)  openBtn.addEventListener('click',  openOverlay);
-  if (closeBtn) closeBtn.addEventListener('click',  closeOverlay);
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeOverlay();
-  });
-
-  /* Also hook hero "Arma tu Buffet" anchor if it points #buffet */
-  document.querySelectorAll('a[href="#buffet"], button#btn-buffet').forEach(function(el) {
-    el.addEventListener('click', function(e) { e.preventDefault(); openOverlay(); });
-  });
-
-  /* ── sticky image switch ── */
-  function setActiveStep(n) {
-    sImgs.forEach(function(img) {
-      img.classList.toggle('vis', img.dataset.step === n);
-    });
-    tabs.forEach(function(t) {
-      if (t.dataset.step === n) t.classList.add('active');
-      else t.classList.remove('active');
-    });
-  }
-
-  /* ── IntersectionObserver on scroll col ── */
-  var io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        var n = entry.target.dataset.step;
-        entry.target.classList.add('in-view');
-        setActiveStep(n);
-        updateSummary();
-      }
-    });
-  }, { root: overlay, rootMargin: '-30% 0px -30% 0px', threshold: 0 });
-
-  steps.forEach(function(s) { io.observe(s); });
-
-  /* ── Tab clicks ── */
-  tabs.forEach(function(t) {
-    t.addEventListener('click', function() {
-      var target = document.getElementById('bov-step-' + t.dataset.step);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-  /* ── Dish selection ── */
-  document.querySelectorAll('.bov-dish').forEach(function(dish) {
-    dish.addEventListener('click', function() {
-      dish.classList.toggle('selected');
-      var name = dish.dataset.name;
-      var cat  = dish.dataset.cat;
-      if (dish.classList.contains('selected')) {
-        selected[name] = cat;
-      } else {
-        delete selected[name];
-      }
-      updateSummary();
-    });
-  });
-
-  /* ── Quantity ── */
-  qtyMinus.addEventListener('click', function() {
-    if (qty > 10) { qty--; qtyNum.textContent = qty; updateSummary(); }
-  });
-  qtyPlus.addEventListener('click',  function() {
-    qty++; qtyNum.textContent = qty; updateSummary();
-  });
-
-  /* ── Update summary + WhatsApp link ── */
-  function updateSummary() {
-    var entradas = [], segundos = [];
-    Object.keys(selected).forEach(function(n) {
-      if (selected[n] === 'entrada') entradas.push(n);
-      else segundos.push(n);
-    });
-
-    /* sticky summary */
-    var parts = [];
-    if (entradas.length) parts.push('<strong>Entradas:</strong> ' + entradas.join(', '));
-    if (segundos.length) parts.push('<strong>Segundos:</strong> ' + segundos.join(', '));
-    parts.push('<strong>Personas:</strong> ' + qty);
-    summary.innerHTML = parts.join('<br>') || 'Selecciona tus platos para ver el resumen.';
-
-    /* final list */
-    var html2 = '';
-    if (entradas.length) html2 += '🥗 <span>Entradas:</span> ' + entradas.join(', ') + '<br>';
-    if (segundos.length) html2 += '🍽️ <span>Segundos:</span> ' + segundos.join(', ') + '<br>';
-    html2 += '👥 <span>Personas:</span> ' + qty;
-    finalList.innerHTML = html2;
-
-    /* WhatsApp message */
-    var msg = 'Hola! Quiero armar mi Buffet en Legado Criollo:%0A';
-    if (entradas.length) msg += '🥗 Entradas: ' + entradas.join(', ') + '%0A';
-    if (segundos.length) msg += '🍽️ Segundos: ' + segundos.join(', ') + '%0A';
-    msg += '👥 Personas: ' + qty;
-    waLink.href = 'https://wa.me/51987654321?text=' + msg;
-
-    /* mark done tabs */
-    if (entradas.length) document.querySelector('.bov-tab[data-step="1"]').classList.add('done');
-    else document.querySelector('.bov-tab[data-step="1"]').classList.remove('done');
-    if (segundos.length) document.querySelector('.bov-tab[data-step="2"]').classList.add('done');
-    else document.querySelector('.bov-tab[data-step="2"]').classList.remove('done');
-  }
-})();
-</script>
+<script src="main.js"></script>
 </body>
 </html>

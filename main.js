@@ -1,64 +1,153 @@
-/* ═══════════════════════════════════════════════
-   GADLY CATERING — main.js
-   ═══════════════════════════════════════════════ */
+/* ═══════════════════════════════════════
+   LEGADO CRIOLLO • NOA NOA — main.js
+   ═══════════════════════════════════════ */
 
-/* ── Navbar: sombra al hacer scroll ── */
-const nav = document.querySelector('nav');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 30) {
-    nav.style.boxShadow = '0 4px 24px rgba(62,37,34,0.12)';
-  } else {
-    nav.style.boxShadow = 'none';
-  }
+/* ── Navbar sombra al scroll ── */
+var nav = document.querySelector('nav');
+window.addEventListener('scroll', function () {
+  nav.style.boxShadow = window.scrollY > 30
+    ? '0 4px 24px rgba(26,37,54,0.1)' : 'none';
 });
 
-/* ── Animación de entrada con IntersectionObserver ── */
-const observerOptions = {
-  threshold: 0.12,
-  rootMargin: '0px 0px -40px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+/* ── Fade-in al entrar en viewport ── */
+var io = new IntersectionObserver(function (entries) {
+  entries.forEach(function (e) {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      io.unobserve(e.target);
     }
   });
-}, observerOptions);
+}, { threshold: 0.12 });
 
-/* Aplicar a tarjetas y secciones */
-document.querySelectorAll(
-  '.feature-card, .blog-card, .cta-split-text, .cta-split-img, .section-title, .section-label'
-).forEach((el, i) => {
+document.querySelectorAll('.feature-card, .blog-card, .section-title, .section-label').forEach(function (el, i) {
   el.style.opacity = '0';
-  el.style.transform = 'translateY(28px)';
-  el.style.transition = `opacity 0.55s ease ${i * 0.06}s, transform 0.55s ease ${i * 0.06}s`;
-  observer.observe(el);
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity .5s ease ' + (i * 0.05) + 's, transform .5s ease ' + (i * 0.05) + 's';
+  io.observe(el);
 });
 
-/* Clase visible */
-document.head.insertAdjacentHTML('beforeend', `
-  <style>
-    .visible {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
-  </style>
-`);
+/* ════════════════════════════════════════
+   MODAL — ARMA TU BUFFET
+   ════════════════════════════════════════ */
+var qty = 20;
+var selected = {};   // name -> cat
 
-/* ── Smooth scroll para links del nav ── */
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+function abrirBuffet() {
+  var modal = document.getElementById('buffet-modal');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  /* reset scroll */
+  document.getElementById('bm-right').scrollTop = 0;
+  activarStep('1');
+  actualizarResumen();
+}
+
+function cerrarBuffet() {
+  document.getElementById('buffet-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* Cerrar con ESC */
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') cerrarBuffet();
+});
+
+/* ── Sticky scroll: detectar qué paso está en pantalla ── */
+var bmRight = null;
+window.addEventListener('load', function () {
+  bmRight = document.getElementById('bm-right');
+  if (!bmRight) return;
+
+  var bmIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        activarStep(e.target.dataset.step);
+      }
+    });
+  }, { root: bmRight, rootMargin: '-30% 0px -30% 0px', threshold: 0 });
+
+  document.querySelectorAll('.bm-step').forEach(function (s) {
+    bmIO.observe(s);
   });
 });
 
-/* ── Botón "Reservar": alerta simple ── */
-document.querySelector('.nav-cta').addEventListener('click', () => {
-  alert('¡Gracias por tu interés! Contáctanos al +51 987 654 321 para hacer tu reserva.');
-});
+function activarStep(n) {
+  /* imagen sticky */
+  document.querySelectorAll('.bm-img').forEach(function (img) {
+    img.classList.toggle('active', img.id === 'bimg' + n);
+  });
+  /* badge */
+  var badge = document.getElementById('bm-badge-num');
+  if (badge) badge.textContent = n;
+  /* nav tabs */
+  document.querySelectorAll('.bm-snav').forEach(function (tab) {
+    tab.classList.toggle('active', tab.dataset.step === n);
+  });
+  /* step opacity */
+  document.querySelectorAll('.bm-step').forEach(function (s) {
+    s.classList.toggle('active', s.dataset.step === n);
+  });
+}
+
+function scrollToStep(n) {
+  var el = document.getElementById('bm-step-' + n);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ── Selección de platos ── */
+function toggleDish(el) {
+  el.classList.toggle('selected');
+  var name = el.dataset.name;
+  var cat  = el.dataset.cat;
+  if (el.classList.contains('selected')) {
+    selected[name] = cat;
+  } else {
+    delete selected[name];
+  }
+  actualizarResumen();
+}
+
+/* ── Cantidad ── */
+function cambiarQty(delta) {
+  qty = Math.max(10, qty + delta);
+  document.getElementById('bm-qty-display').textContent = qty;
+  actualizarResumen();
+}
+
+/* ── Resumen y link WhatsApp ── */
+function actualizarResumen() {
+  var entradas = [], segundos = [];
+  Object.keys(selected).forEach(function (n) {
+    if (selected[n] === 'entrada') entradas.push(n);
+    else segundos.push(n);
+  });
+
+  /* panel sticky */
+  var lines = [];
+  if (entradas.length) lines.push('<strong>🥗 Entradas:</strong><br>' + entradas.join(', '));
+  if (segundos.length) lines.push('<strong>🍽️ Segundos:</strong><br>' + segundos.join(', '));
+  lines.push('<strong>👥 Personas:</strong> ' + qty);
+  document.getElementById('bm-summary-body').innerHTML = lines.join('<br><br>');
+
+  /* card final */
+  var fc = '';
+  if (entradas.length) fc += '🥗 <strong>Entradas:</strong> ' + entradas.join(', ') + '<br>';
+  if (segundos.length) fc += '🍽️ <strong>Segundos:</strong> ' + segundos.join(', ') + '<br>';
+  fc += '👥 <strong>Personas:</strong> ' + qty;
+  document.getElementById('bm-final-content').innerHTML = fc;
+
+  /* mark done */
+  var t1 = document.querySelector('.bm-snav[data-step="1"]');
+  var t2 = document.querySelector('.bm-snav[data-step="2"]');
+  if (t1) t1.classList.toggle('done', entradas.length > 0);
+  if (t2) t2.classList.toggle('done', segundos.length > 0);
+
+  /* WhatsApp */
+  var msg = 'Hola! Quiero armar mi Buffet:%0A';
+  if (entradas.length) msg += '🥗 Entradas: ' + entradas.join(', ') + '%0A';
+  if (segundos.length) msg += '🍽️ Segundos: ' + segundos.join(', ') + '%0A';
+  msg += '👥 Personas: ' + qty;
+  var waBtn = document.getElementById('bm-wa-btn');
+  if (waBtn) waBtn.href = 'https://wa.me/51904609346?text=' + msg;
+}
