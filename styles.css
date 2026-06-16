@@ -838,3 +838,188 @@ footer {
 @media (max-width: 900px) {
   .nav-link-arrow { font-size: 13px; }
 }
+
+/* ══════════════════════════════════════
+   SECCIÓN: ¿QUIÉNES SOMOS?
+   ══════════════════════════════════════ */
+.qs-section {
+  background: var(--hueso);
+  scroll-margin-top: 80px;
+}
+
+/* Header */
+.qs-header {
+  text-align: center;
+  padding: 90px 60px 60px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.qs-intro {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-top: 20px;
+}
+.qs-intro strong { color: var(--azul); font-weight: 700; }
+
+/* ── Spotlight: Doña Noa ── */
+.qs-spotlight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding: 0 80px 90px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.qs-img-frame {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 32px 72px rgba(26,37,54,.16);
+  aspect-ratio: 3/4;
+}
+.qs-img-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+}
+.qs-img-frame:hover img { transform: scale(1.03); }
+.qs-img-badge {
+  position: absolute;
+  bottom: 20px; left: 20px;
+  background: rgba(26,37,54,.85);
+  backdrop-filter: blur(8px);
+  color: white;
+  border-radius: 30px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.qs-badge-icon { font-size: 18px; }
+
+/* Spotlight text */
+.qs-spotlight-text { display: flex; flex-direction: column; gap: 16px; }
+.qs-tag {
+  display: inline-block;
+  background: rgba(184,58,20,.1);
+  color: var(--terracota);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 20px;
+  width: fit-content;
+}
+.qs-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 900;
+  color: var(--azul);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.qs-spotlight-text p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #4a5568;
+}
+.qs-spotlight-text strong { color: var(--azul); font-weight: 700; }
+
+/* Stat pills */
+.qs-stats {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.qs-stat {
+  background: white;
+  border: 1px solid rgba(26,37,54,.1);
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 90px;
+  box-shadow: 0 4px 16px rgba(26,37,54,.06);
+}
+.qs-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--terracota);
+  line-height: 1;
+}
+.qs-stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* ── Compromiso ── */
+.qs-compromiso {
+  background: var(--azul);
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 72px 80px;
+}
+.qs-comp-icon {
+  font-size: 52px;
+  line-height: 1;
+  align-self: flex-start;
+  padding-top: 6px;
+}
+.qs-comp-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 900;
+  color: var(--hueso);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.qs-comp-text p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(253,251,247,.75);
+  margin-bottom: 12px;
+}
+.qs-comp-text strong { color: var(--dorado); }
+.qs-cierre {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 17px !important;
+  color: var(--dorado) !important;
+  font-style: italic;
+}
+.qs-comp-img {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 56px rgba(0,0,0,.35);
+}
+.qs-comp-img img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s;
+}
+.qs-comp-img:hover img { transform: scale(1.03); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .qs-header { padding: 60px 24px 40px; }
+  .qs-spotlight { grid-template-columns: 1fr; padding: 0 24px 60px; gap: 36px; }
+  .qs-compromiso { grid-template-columns: 1fr; padding: 48px 24px; gap: 24px; }
+  .qs-comp-icon { display: none; }
+}
