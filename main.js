@@ -287,5 +287,5 @@ document.addEventListener('keydown', function (e) {
 
 /* Render inicial */
 document.addEventListener('DOMContentLoaded', function () {
-  renderGaleria('todos');
+  renderGaleria('matrimonios');
 });

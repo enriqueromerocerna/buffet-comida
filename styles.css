@@ -1473,10 +1473,10 @@ footer {
   font-weight: 300;
 }
 
-/* Icono olla de barro (reemplaza el emoji 🏺) */
+/* Icono olla de barro (SVG incrustado, reemplaza el emoji 🏺) */
 .icon-olla {
   height: 1em;
-  width: auto;
+  width: 1.04em;
   vertical-align: middle;
   display: inline-block;
 }
