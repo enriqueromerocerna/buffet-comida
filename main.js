@@ -163,3 +163,53 @@ document.querySelectorAll('.exp-tab').forEach(function(tab) {
     if (panel) panel.classList.add('active');
   });
 });
+
+/* ── Dish selection limits ── */
+var LIMITS = { entrada: 2, segundo: 4 };
+
+function toggleDish(el) {
+  var name = el.dataset.name;
+  var cat  = el.dataset.cat;
+  var isSelected = el.classList.contains('selected');
+  var currentCount = Object.values(selected).filter(function(c){ return c === cat; }).length;
+
+  // If trying to select and limit reached → block
+  if (!isSelected && currentCount >= LIMITS[cat]) {
+    // shake animation
+    el.style.animation = 'shake .35s ease';
+    setTimeout(function(){ el.style.animation = ''; }, 360);
+    return;
+  }
+
+  el.classList.toggle('selected');
+  if (el.classList.contains('selected')) {
+    selected[name] = cat;
+  } else {
+    delete selected[name];
+  }
+  updateLimits(cat);
+  actualizarResumen();
+}
+
+function updateLimits(cat) {
+  var count = Object.values(selected).filter(function(c){ return c === cat; }).length;
+  var limit = LIMITS[cat];
+  var noteEl = document.getElementById('limit-' + cat);
+  if (!noteEl) return;
+
+  if (count >= limit) {
+    noteEl.textContent = '⚠️ Límite alcanzado: ' + count + '/' + limit;
+    noteEl.classList.add('reached');
+    // disable unselected dishes of this cat
+    document.querySelectorAll('.bm-dish[data-cat="' + cat + '"]:not(.selected)').forEach(function(d){
+      d.classList.add('disabled');
+    });
+  } else {
+    var remaining = limit - count;
+    noteEl.innerHTML = '✓ Puedes elegir ' + remaining + ' más (máx. ' + limit + ')';
+    noteEl.classList.remove('reached');
+    document.querySelectorAll('.bm-dish[data-cat="' + cat + '"]').forEach(function(d){
+      d.classList.remove('disabled');
+    });
+  }
+}
