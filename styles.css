@@ -1485,31 +1485,38 @@ footer {
    BOTÓN "ORIGIN" — relleno circular desde el cursor
    ════════════════════════════════════════ */
 .btn-origin {
+  /* colores configurables por cada variante */
+  --bo-bg: var(--terracota);
+  --bo-fill: var(--dorado);
+  --bo-text: #ffffff;
+  --bo-text-filled: var(--azul);
+
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 52px;
-  padding: 0 34px;
+  vertical-align: middle;
+  gap: 8px;
+  padding: 16px 32px;
   border: none;
   border-radius: 14px;
-  background: var(--terracota);
-  color: #ffffff;
+  background: var(--bo-bg);
+  color: var(--bo-text);
   font-family: inherit;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: -0.01em;
+  line-height: 1;
   cursor: pointer;
   overflow: hidden;
   isolation: isolate;
   user-select: none;
+  text-decoration: none;
   -webkit-tap-highlight-color: transparent;
-  box-shadow: 0 10px 30px rgba(184,58,20,.35);
   transition: color .3s cubic-bezier(.16,1,.3,1),
               transform .15s ease,
               box-shadow .3s ease;
 }
-.btn-origin:hover  { box-shadow: 0 12px 34px rgba(212,175,55,.4); }
 .btn-origin:active { transform: scale(.985); }
 .btn-origin:focus-visible {
   outline: none;
@@ -1524,7 +1531,7 @@ footer {
   width: var(--size, 0px);
   height: var(--size, 0px);
   border-radius: 50%;
-  background: var(--dorado);
+  background: var(--bo-fill);
   pointer-events: none;
   z-index: 0;
   transform: translate(-50%, -50%) scale(0);
@@ -1533,12 +1540,42 @@ footer {
 .btn-origin.is-filled .btn-origin-fill {
   transform: translate(-50%, -50%) scale(1);
 }
-/* al llenarse, el texto se vuelve azul para contrastar con el dorado */
-.btn-origin.is-filled { color: var(--azul); }
+/* al llenarse, el texto cambia de color para contrastar con el relleno */
+.btn-origin.is-filled { color: var(--bo-text-filled); }
 
 .btn-origin-label {
   position: relative;
   z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Variantes de color ── */
+.btn-origin--wa {            /* WhatsApp (verde) */
+  --bo-bg: var(--whatsapp);
+  --bo-fill: #0f7a5c;
+  --bo-text: #ffffff;
+  --bo-text-filled: #ffffff;
+}
+.btn-origin--outline {       /* contorno, para fondo claro */
+  --bo-bg: transparent;
+  --bo-fill: var(--azul);
+  --bo-text: var(--azul);
+  --bo-text-filled: var(--hueso);
+  border: 2px solid var(--azul);
+}
+
+/* ── Tamaño compacto ── */
+.btn-origin--sm {
+  padding: 11px 22px;
+  font-size: 13px;
+  border-radius: 24px;
+}
+
+/* sombra suave solo en la variante terracota por defecto */
+.btn-origin:not(.btn-origin--outline):not(.btn-origin--wa) {
+  box-shadow: 0 10px 30px rgba(184,58,20,.28);
 }
 
 /* respeta a quien prefiere menos animación */
