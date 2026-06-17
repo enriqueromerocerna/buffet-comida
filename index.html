@@ -59,7 +59,7 @@
       </div>
     </li>
     <li><a href="#" onclick="abrirBuffet(); return false;" class="nav-link-buffet">Arma tu Buffet</a></li>
-    <li><a href="#blog">La experiencia</a></li>
+    <li><a href="#la-experiencia">La experiencia</a></li>
     <li><a href="#quienes-somos">¿Quiénes somos?</a></li>
   </ul>
   <button class="nav-cta" onclick="abrirBuffet()">Cotizar Evento</button>
@@ -116,39 +116,107 @@
   </div>
 </section>
 
-<!-- TESTIMONIOS -->
-<section class="blog" id="blog">
-  <p class="section-label">Experiencias reales</p>
-  <h2 class="section-title">Nuestros Clientes Opinan</h2>
-  <div class="blog-grid">
-    <div class="blog-card">
-      <img class="blog-card-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Cena de alta cocina" onerror="this.style.background='#D4AF37';"/>
-      <div class="blog-card-body">
-        <span class="blog-card-tag">Bodas</span>
-        <div class="blog-card-title">Alta cocina para nuestra boda soñada</div>
-        <p class="blog-card-desc">El servicio fue perfecto de principio a fin. Los invitados no pararon de elogiar cada plato.</p>
-        <div class="blog-card-footer"><button class="btn-read">Leer más →</button><span class="blog-likes">♥ 48</span></div>
+<!-- LA EXPERIENCIA -->
+<section id="la-experiencia" class="exp-section">
+
+  <!-- Header -->
+  <div class="exp-header">
+    <p class="section-label" style="color:var(--terracota);">Lo que dicen nuestros clientes</p>
+    <h2 class="section-title" style="color:var(--azul);">La Experiencia</h2>
+    <p class="exp-subtitle">Cada evento es único. Lee lo que vivieron quienes ya confiaron en Legado Criollo&nbsp;•&nbsp;Noa Noa.</p>
+
+    <!-- Category tabs -->
+    <div class="exp-tabs">
+      <button class="exp-tab active" data-cat="bodas">💍 Matrimonios</button>
+      <button class="exp-tab" data-cat="corporativo">🏢 Corporativo</button>
+      <button class="exp-tab" data-cat="social">🎉 Sociales</button>
+    </div>
+  </div>
+
+  <!-- ── MARQUEE ROWS per category ── -->
+
+  <!-- BODAS -->
+  <div class="exp-cat active" id="exp-bodas">
+    <div class="marquee-outer">
+      <div class="marquee-track">
+        <!-- row 1 -->
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"El buffet criollo de Doña Noa fue la estrella de nuestra boda. Las ollas de barro llegaron humeantes y perfectas. ¡Todos los invitados pidieron el contacto!"</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">M</div><div><strong>María &amp; Carlos</strong><small>Matrimonio · Chimbote</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Puntualidad, sabor y presentación increíble. El ceviche y el ají de gallina desaparecieron en minutos. No podría haber elegido mejor para nuestro gran día."</p><div class="t-author"><div class="t-avatar" style="background:#B83A14">L</div><div><strong>Luciana Ramos</strong><small>Novia · Lima</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Desde la primera llamada hasta el último plato, todo fue perfecto. La sazón de Doña Noa nos hizo sentir que estábamos en casa, pero en el mejor día de nuestras vidas."</p><div class="t-author"><div class="t-avatar" style="background:#1A2536">P</div><div><strong>Pedro &amp; Sofía</strong><small>Boda de 150 personas</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Las ollas de barro fueron un detalle que enamoró a todos. La comida llegó caliente y lista. Nuestros invitados siguen hablando del catering meses después."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">A</div><div><strong>Ana Gutiérrez</strong><small>Matrimonio · Ancash</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"La causa limeña y los anticuchos fueron un hit total. Servicio impecable, presentación elegante y una sazón que nunca olvidaremos. ¡100% recomendado!"</p><div class="t-author"><div class="t-avatar" style="background:#B83A14">R</div><div><strong>Rosa &amp; Miguel</strong><small>Boda íntima · 80 personas</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Superaron todas nuestras expectativas. El lomo saltado y el arroz con mariscos estuvieron espectaculares. Doña Noa cocina con un amor que se nota en cada bocado."</p><div class="t-author"><div class="t-avatar" style="background:#1A2536">J</div><div><strong>Jhon Paredes</strong><small>Organizador del evento</small></div></div></div>
+        <!-- duplicate for infinite loop -->
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"El buffet criollo de Doña Noa fue la estrella de nuestra boda. Las ollas de barro llegaron humeantes y perfectas. ¡Todos los invitados pidieron el contacto!"</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">M</div><div><strong>María &amp; Carlos</strong><small>Matrimonio · Chimbote</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Puntualidad, sabor y presentación increíble. El ceviche y el ají de gallina desaparecieron en minutos. No podría haber elegido mejor para nuestro gran día."</p><div class="t-author"><div class="t-avatar" style="background:#B83A14">L</div><div><strong>Luciana Ramos</strong><small>Novia · Lima</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Desde la primera llamada hasta el último plato, todo fue perfecto. La sazón de Doña Noa nos hizo sentir que estábamos en casa, pero en el mejor día de nuestras vidas."</p><div class="t-author"><div class="t-avatar" style="background:#1A2536">P</div><div><strong>Pedro &amp; Sofía</strong><small>Boda de 150 personas</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Las ollas de barro fueron un detalle que enamoró a todos. La comida llegó caliente y lista. Nuestros invitados siguen hablando del catering meses después."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">A</div><div><strong>Ana Gutiérrez</strong><small>Matrimonio · Ancash</small></div></div></div>
       </div>
     </div>
-    <div class="blog-card">
-      <img class="blog-card-img" src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600&q=80" alt="Buffet corporativo" onerror="this.style.background='#D4AF37';"/>
-      <div class="blog-card-body">
-        <span class="blog-card-tag">Corporativo</span>
-        <div class="blog-card-title">Buffet ejecutivo para 200 personas</div>
-        <p class="blog-card-desc">Organizaron el catering de nuestra conferencia anual con total profesionalismo.</p>
-        <div class="blog-card-footer"><button class="btn-read">Leer más →</button><span class="blog-likes">♥ 31</span></div>
-      </div>
-    </div>
-    <div class="blog-card">
-      <img class="blog-card-img" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="Desayuno gourmet" onerror="this.style.background='#D4AF37';"/>
-      <div class="blog-card-body">
-        <span class="blog-card-tag">Social</span>
-        <div class="blog-card-title">Desayuno gourmet para mi cumpleaños</div>
-        <p class="blog-card-desc">Superaron todas mis expectativas. Cada detalle fue cuidado y la comida estuvo deliciosa.</p>
-        <div class="blog-card-footer"><button class="btn-read">Leer más →</button><span class="blog-likes">♥ 72</span></div>
+    <!-- row 2 reverse -->
+    <div class="marquee-outer">
+      <div class="marquee-track reverse">
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Organizamos una boda de 200 personas y el servicio fue impecable. La comida llegó puntual, caliente y presentada con ese toque rústico elegante que buscábamos."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">C</div><div><strong>Carmen Villanueva</strong><small>Wedding Planner</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"La presentación en ollas de barro fue un detalle que ningún invitado esperaba y que todos adoraron. El seco de pollo estuvo de otro mundo. Gracias Doña Noa."</p><div class="t-author"><div class="t-avatar" style="background:#B83A14">F</div><div><strong>Fernando Salas</strong><small>Padrino de boda</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Cotizamos con varios caterings y ninguno nos dio la confianza que nos dio Legado Criollo. Vale cada sol. La calidad del sabor y del servicio es incomparable."</p><div class="t-author"><div class="t-avatar" style="background:#1A2536">V</div><div><strong>Valeria Chávez</strong><small>Novia 2025</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Mi abuela dijo que era la mejor comida criolla que había probado en años. Eso lo dice todo. Doña Noa tiene un don especial que no se aprende, se nace con él."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">G</div><div><strong>Gabriela Tuesta</strong><small>Quinceañera · Nuevo Chimbote</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Organizamos una boda de 200 personas y el servicio fue impecable. La comida llegó puntual, caliente y presentada con ese toque rústico elegante que buscábamos."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">C</div><div><strong>Carmen Villanueva</strong><small>Wedding Planner</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"La presentación en ollas de barro fue un detalle que ningún invitado esperaba y que todos adoraron. El seco de pollo estuvo de otro mundo. Gracias Doña Noa."</p><div class="t-author"><div class="t-avatar" style="background:#B83A14">F</div><div><strong>Fernando Salas</strong><small>Padrino de boda</small></div></div></div>
       </div>
     </div>
   </div>
+
+  <!-- CORPORATIVO -->
+  <div class="exp-cat" id="exp-corporativo">
+    <div class="marquee-outer">
+      <div class="marquee-track">
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Contratamos a Legado Criollo para el almuerzo de nuestra empresa con 120 colaboradores. La puntualidad y la calidad de la comida fueron excepcionales. Ya los tenemos en nuestro directorio permanente."</p><div class="t-author"><div class="t-avatar" style="background:#1A2536">R</div><div><strong>Roberto Flores</strong><small>Gerente RRHH · Empresa Pesquera</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"El catering criollo para nuestra conferencia anual fue un éxito rotundo. Los participantes internacionales quedaron maravillados con la gastronomía peruana de Doña Noa."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">T</div><div><strong>Teresa Montoya</strong><small>Directora de Operaciones</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Profesionalismo de primer nivel. Llegaron antes del horario acordado, montaron todo perfectamente y la comida estuvo deliciosa. Los recomendamos ampliamente."</p><div class="t-author"><div class="t-avatar" style="background:#B83A14">H</div><div><strong>Hernán Castro</strong><small>CEO · Constructora</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Para nuestro cierre de año empresarial buscábamos algo diferente. Legado Criollo nos entregó un buffet auténtico que nuestros 80 empleados no pararán de recordar."</p><div class="t-author"><div class="t-avatar" style="background:#1A2536">N</div><div><strong>Natalia Ríos</strong><small>Event Manager · Banco Regional</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Contratamos a Legado Criollo para el almuerzo de nuestra empresa con 120 colaboradores. La puntualidad y la calidad de la comida fueron excepcionales."</p><div class="t-author"><div class="t-avatar" style="background:#1A2536">R</div><div><strong>Roberto Flores</strong><small>Gerente RRHH · Empresa Pesquera</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"El catering criollo para nuestra conferencia anual fue un éxito rotundo. Los participantes internacionales quedaron maravillados con la gastronomía peruana."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">T</div><div><strong>Teresa Montoya</strong><small>Directora de Operaciones</small></div></div></div>
+      </div>
+    </div>
+    <div class="marquee-outer">
+      <div class="marquee-track reverse">
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Llevamos 3 años trabajando con ellos para nuestros eventos trimestrales. Cada vez mejoran. La carapulcra y el arroz con mariscos son los favoritos de nuestro equipo."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">E</div><div><strong>Eduardo Vargas</strong><small>Jefe de Administración</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Las ollas de barro le dieron un toque especial a nuestro evento corporativo. Nuestros clientes internacionales quedaron impresionados con la presentación y el sabor."</p><div class="t-author"><div class="t-avatar" style="background:#B83A14">I</div><div><strong>Isabel Paredes</strong><small>Gerente Comercial</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Pedimos para 200 personas y todo salió perfecto. La logística, la temperatura de los alimentos, la presentación... todo impecable. Definitivamente los volvemos a contratar."</p><div class="t-author"><div class="t-avatar" style="background:#1A2536">O</div><div><strong>Oscar Mendoza</strong><small>Director Ejecutivo</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Llevamos 3 años trabajando con ellos para nuestros eventos trimestrales. Cada vez mejoran. La carapulcra y el arroz con mariscos son los favoritos de nuestro equipo."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">E</div><div><strong>Eduardo Vargas</strong><small>Jefe de Administración</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Las ollas de barro le dieron un toque especial a nuestro evento corporativo. Nuestros clientes internacionales quedaron impresionados con la presentación y el sabor."</p><div class="t-author"><div class="t-avatar" style="background:#B83A14">I</div><div><strong>Isabel Paredes</strong><small>Gerente Comercial</small></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOCIAL -->
+  <div class="exp-cat" id="exp-social">
+    <div class="marquee-outer">
+      <div class="marquee-track">
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Para el bautizo de mi hija quería algo especial y Legado Criollo superó todo lo que imaginé. Los niños y los adultos quedaron felices. La causa limeña fue un éxito total."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">S</div><div><strong>Sandra Huertas</strong><small>Bautizo · Chimbote</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Mi cumpleaños número 50 fue perfecto gracias a Doña Noa. 60 invitados, todos contentos y bien alimentados. El pollo a la brasa y el ají de gallina volaron del buffet."</p><div class="t-author"><div class="t-avatar" style="background:#B83A14">D</div><div><strong>Diego Lazo</strong><small>Cumpleaños · 60 personas</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Celebramos la primera comunión de mi sobrino con un buffet de Legado Criollo. Fue el tema de conversación de toda la familia. ¡Hasta mi abuela pidió la receta del ceviche!"</p><div class="t-author"><div class="t-avatar" style="background:#1A2536">K</div><div><strong>Karen Ulloa</strong><small>Primera Comunión · Lima</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Organizamos una reunión familiar de 90 personas y el buffet criollo fue la mejor decisión. Todo llegó caliente, bien presentado y con una sazón que nos recordó a casa."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">B</div><div><strong>Beatriz Campos</strong><small>Reunión familiar · Ancash</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Para el bautizo de mi hija quería algo especial y Legado Criollo superó todo lo que imaginé. Los niños y los adultos quedaron felices. La causa limeña fue un éxito total."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">S</div><div><strong>Sandra Huertas</strong><small>Bautizo · Chimbote</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Mi cumpleaños número 50 fue perfecto gracias a Doña Noa. 60 invitados, todos contentos y bien alimentados. El pollo a la brasa y el ají de gallina volaron del buffet."</p><div class="t-author"><div class="t-avatar" style="background:#B83A14">D</div><div><strong>Diego Lazo</strong><small>Cumpleaños · 60 personas</small></div></div></div>
+      </div>
+    </div>
+    <div class="marquee-outer">
+      <div class="marquee-track reverse">
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Un bautizo de ensueño. La comida estuvo deliciosa, el servicio fue profesional y las ollas de barro decoraron la mesa de una forma muy bonita y diferente."</p><div class="t-author"><div class="t-avatar" style="background:#1A2536">Y</div><div><strong>Yolanda Cruz</strong><small>Bautizo · 50 personas</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Para los 15 años de mi hija quería un catering diferente. Elegimos criollo y fue la mejor decisión. Los jóvenes y los mayores disfrutaron por igual. Totalmente recomendado."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">X</div><div><strong>Ximena Torres</strong><small>Quinceañero · Chimbote</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Llevamos años celebrando eventos familiares con Doña Noa. Es nuestra chef de confianza. Su sazón es única y su sencillez y calidez hacen que todo sea más especial."</p><div class="t-author"><div class="t-avatar" style="background:#B83A14">Z</div><div><strong>Zoila Espinoza</strong><small>Cliente frecuente</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Un bautizo de ensueño. La comida estuvo deliciosa, el servicio fue profesional y las ollas de barro decoraron la mesa de una forma muy bonita y diferente."</p><div class="t-author"><div class="t-avatar" style="background:#1A2536">Y</div><div><strong>Yolanda Cruz</strong><small>Bautizo · 50 personas</small></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Para los 15 años de mi hija quería un catering diferente. Elegimos criollo y fue la mejor decisión. Los jóvenes y los mayores disfrutaron por igual. Totalmente recomendado."</p><div class="t-author"><div class="t-avatar" style="background:#D4AF37">X</div><div><strong>Ximena Torres</strong><small>Quinceañero · Chimbote</small></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA dejar reseña -->
+  <div class="exp-cta">
+    <p>¿Ya viviste la experiencia? <a href="https://wa.me/51904609346?text=Hola!%20Quiero%20dejar%20mi%20comentario%20sobre%20el%20servicio" target="_blank" class="exp-cta-link">Comparte tu opinión por WhatsApp →</a></p>
+  </div>
+
 </section>
 
 

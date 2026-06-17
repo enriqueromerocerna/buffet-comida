@@ -1023,3 +1023,172 @@ footer {
   .qs-compromiso { grid-template-columns: 1fr; padding: 48px 24px; gap: 24px; }
   .qs-comp-icon { display: none; }
 }
+
+/* ══════════════════════════════════════
+   SECCIÓN: LA EXPERIENCIA — Marquee
+   ══════════════════════════════════════ */
+.exp-section {
+  background: var(--hueso);
+  scroll-margin-top: 80px;
+  overflow: hidden;
+}
+
+.exp-header {
+  text-align: center;
+  padding: 90px 60px 48px;
+}
+.exp-subtitle {
+  font-size: 16px;
+  color: #4a5568;
+  line-height: 1.7;
+  max-width: 580px;
+  margin: 16px auto 36px;
+}
+
+/* Tabs */
+.exp-tabs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.exp-tab {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 2px solid rgba(26,37,54,.15);
+  background: white;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--azul);
+  cursor: pointer;
+  transition: all .22s ease;
+}
+.exp-tab:hover {
+  border-color: var(--terracota);
+  color: var(--terracota);
+}
+.exp-tab.active {
+  background: var(--azul);
+  border-color: var(--azul);
+  color: white;
+}
+
+/* Category panels */
+.exp-cat {
+  display: none;
+  padding-bottom: 20px;
+}
+.exp-cat.active { display: block; }
+
+/* ── Marquee ── */
+.marquee-outer {
+  overflow: hidden;
+  width: 100%;
+  padding: 12px 0;
+  /* fade edges */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  animation: marquee-left 38s linear infinite;
+}
+.marquee-track.reverse {
+  animation: marquee-right 42s linear infinite;
+}
+
+/* Pause on hover */
+.marquee-outer:hover .marquee-track { animation-play-state: paused; }
+
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* ── Testimonial card ── */
+.t-card {
+  width: 320px;
+  flex-shrink: 0;
+  background: white;
+  border: 1px solid rgba(26,37,54,.09);
+  border-radius: 18px;
+  padding: 24px 22px 20px;
+  box-shadow: 0 4px 20px rgba(26,37,54,.07);
+  transition: box-shadow .25s, transform .25s;
+  cursor: default;
+}
+.t-card:hover {
+  box-shadow: 0 12px 40px rgba(26,37,54,.13);
+  transform: translateY(-3px);
+}
+.t-stars {
+  color: var(--dorado);
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.t-text {
+  font-size: 14px;
+  line-height: 1.72;
+  color: #374151;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.t-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(26,37,54,.07);
+  padding-top: 14px;
+}
+.t-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Playfair Display', serif;
+}
+.t-author strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--azul);
+  line-height: 1.3;
+}
+.t-author small {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* CTA dejar reseña */
+.exp-cta {
+  text-align: center;
+  padding: 40px 24px 80px;
+  font-size: 15px;
+  color: #4a5568;
+}
+.exp-cta-link {
+  color: var(--terracota);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color .2s;
+}
+.exp-cta-link:hover { color: var(--azul); }
+
+@media (max-width: 640px) {
+  .exp-header { padding: 60px 24px 36px; }
+  .t-card { width: 270px; }
+}

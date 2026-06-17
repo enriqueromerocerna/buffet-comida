@@ -151,3 +151,15 @@ function actualizarResumen() {
   var waBtn = document.getElementById('bm-wa-btn');
   if (waBtn) waBtn.href = 'https://wa.me/51904609346?text=' + msg;
 }
+
+/* ── La Experiencia: tabs ── */
+document.querySelectorAll('.exp-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.exp-tab').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelectorAll('.exp-cat').forEach(function(c) { c.classList.remove('active'); });
+    tab.classList.add('active');
+    var cat = tab.dataset.cat;
+    var panel = document.getElementById('exp-' + cat);
+    if (panel) panel.classList.add('active');
+  });
+});
