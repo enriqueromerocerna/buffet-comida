@@ -28,28 +28,28 @@
     <li class="nav-item-dropdown">
       <a href="#features" class="nav-link-arrow">Servicios / Eventos ▾</a>
       <div class="nav-dropdown">
-        <a href="#" class="nav-drop-item">
+        <a href="#galeria-eventos" class="nav-drop-item" onclick="mostrarGaleria('matrimonios'); return false;">
           <span class="nav-drop-icon">💍</span>
           <span>
             <strong>Matrimonios</strong>
             <small>Buffet criollo para tu gran día</small>
           </span>
         </a>
-        <a href="#" class="nav-drop-item">
+        <a href="#galeria-eventos" class="nav-drop-item" onclick="mostrarGaleria('bautizos'); return false;">
           <span class="nav-drop-icon">🕊️</span>
           <span>
             <strong>Bautizos</strong>
             <small>Celebra con sabor y tradición</small>
           </span>
         </a>
-        <a href="#" class="nav-drop-item">
+        <a href="#galeria-eventos" class="nav-drop-item" onclick="mostrarGaleria('cumpleanos'); return false;">
           <span class="nav-drop-icon">🎂</span>
           <span>
             <strong>Cumpleaños</strong>
             <small>El menú perfecto para festejar</small>
           </span>
         </a>
-        <a href="#" class="nav-drop-item">
+        <a href="#galeria-eventos" class="nav-drop-item" onclick="mostrarGaleria('corporativos'); return false;">
           <span class="nav-drop-icon">🏢</span>
           <span>
             <strong>Eventos Corporativos</strong>
@@ -129,6 +129,31 @@
 
   </div>
 </section>
+
+<!-- GALERÍA DE EVENTOS -->
+<section id="galeria-eventos" class="galeria">
+  <div class="galeria-inner">
+    <p class="galeria-eyebrow">Nuestro Trabajo</p>
+    <h2 class="galeria-title">Galería de Eventos</h2>
+    <p class="galeria-sub">Mira algunos de los eventos que hemos tenido el honor de atender. Elige una categoría para ver más.</p>
+
+    <div class="galeria-tabs">
+      <button class="galeria-tab active" data-cat="todos" onclick="mostrarGaleria('todos')">Todos</button>
+      <button class="galeria-tab" data-cat="matrimonios" onclick="mostrarGaleria('matrimonios')">Matrimonios</button>
+      <button class="galeria-tab" data-cat="bautizos" onclick="mostrarGaleria('bautizos')">Bautizos</button>
+      <button class="galeria-tab" data-cat="cumpleanos" onclick="mostrarGaleria('cumpleanos')">Cumpleaños</button>
+      <button class="galeria-tab" data-cat="corporativos" onclick="mostrarGaleria('corporativos')">Corporativos</button>
+    </div>
+
+    <div class="galeria-grid" id="galeria-grid"></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX galería -->
+<div id="galeria-lightbox" class="galeria-lightbox" onclick="cerrarLightbox()">
+  <span class="galeria-lb-close">&times;</span>
+  <img id="galeria-lb-img" src="" alt="" />
+</div>
 
 <!-- LA EXPERIENCIA -->
 <section id="la-experiencia" class="exp-section">

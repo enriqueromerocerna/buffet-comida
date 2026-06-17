@@ -213,3 +213,79 @@ function updateLimits(cat) {
     });
   }
 }
+
+/* ════════════════════════════════════════
+   GALERÍA DE EVENTOS
+   ════════════════════════════════════════ */
+
+/* Fotos por categoría.
+   👉 Reemplaza estas imágenes por fotos reales de tus eventos.
+      Solo cambia la ruta 'src' (ej: 'imgs/boda_01.jpg') y el 'titulo'. */
+var GALERIA_EVENTOS = [
+  { src: 'imgs/img_02.jpg', cat: 'matrimonios',  titulo: 'Recepción de boda' },
+  { src: 'imgs/img_09.jpg', cat: 'matrimonios',  titulo: 'Banquete principal' },
+  { src: 'imgs/img_10.jpg', cat: 'matrimonios',  titulo: 'Estación de entradas' },
+  { src: 'imgs/img_07.jpg', cat: 'bautizos',     titulo: 'Buffet de bautizo' },
+  { src: 'imgs/img_06.jpg', cat: 'bautizos',     titulo: 'Plato criollo servido' },
+  { src: 'imgs/img_03.jpg', cat: 'bautizos',     titulo: 'Segundos a elección' },
+  { src: 'imgs/img_04.jpg', cat: 'cumpleanos',   titulo: 'Celebración familiar' },
+  { src: 'imgs/img_05.jpg', cat: 'cumpleanos',   titulo: 'Seco con frejoles' },
+  { src: 'imgs/img_07.jpg', cat: 'cumpleanos',   titulo: 'Causa rellena' },
+  { src: 'imgs/img_08.jpg', cat: 'corporativos', titulo: 'Servicio en vivo' },
+  { src: 'imgs/img_09.jpg', cat: 'corporativos', titulo: 'Catering empresarial' },
+  { src: 'imgs/img_02.jpg', cat: 'corporativos', titulo: 'Estación de cebiche' }
+];
+
+function renderGaleria(cat) {
+  var grid = document.getElementById('galeria-grid');
+  if (!grid) return;
+
+  /* pestaña activa */
+  document.querySelectorAll('.galeria-tab').forEach(function (t) {
+    t.classList.toggle('active', t.dataset.cat === cat);
+  });
+
+  /* filtrar */
+  var items = (cat === 'todos')
+    ? GALERIA_EVENTOS
+    : GALERIA_EVENTOS.filter(function (it) { return it.cat === cat; });
+
+  if (!items.length) {
+    grid.innerHTML = '<p class="galeria-empty">Pronto subiremos fotos de esta categoría.</p>';
+    return;
+  }
+
+  grid.innerHTML = items.map(function (it) {
+    return '<div class="galeria-card" onclick="abrirLightbox(\'' + it.src + '\')">' +
+             '<img src="' + it.src + '" alt="' + it.titulo + '" loading="lazy" />' +
+             '<div class="galeria-card-overlay">' + it.titulo + '</div>' +
+           '</div>';
+  }).join('');
+}
+
+function mostrarGaleria(cat) {
+  renderGaleria(cat);
+  var sec = document.getElementById('galeria-eventos');
+  if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* Lightbox */
+function abrirLightbox(src) {
+  var lb = document.getElementById('galeria-lightbox');
+  var img = document.getElementById('galeria-lb-img');
+  if (!lb || !img) return;
+  img.src = src;
+  lb.classList.add('open');
+}
+function cerrarLightbox() {
+  var lb = document.getElementById('galeria-lightbox');
+  if (lb) lb.classList.remove('open');
+}
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') cerrarLightbox();
+});
+
+/* Render inicial */
+document.addEventListener('DOMContentLoaded', function () {
+  renderGaleria('todos');
+});
