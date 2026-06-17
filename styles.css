@@ -1472,3 +1472,11 @@ footer {
   cursor: pointer;
   font-weight: 300;
 }
+
+/* Icono olla de barro (reemplaza el emoji 🏺) */
+.icon-olla {
+  height: 1em;
+  width: auto;
+  vertical-align: middle;
+  display: inline-block;
+}
