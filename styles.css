@@ -1480,3 +1480,68 @@ footer {
   vertical-align: middle;
   display: inline-block;
 }
+
+/* ════════════════════════════════════════
+   BOTÓN "ORIGIN" — relleno circular desde el cursor
+   ════════════════════════════════════════ */
+.btn-origin {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 34px;
+  border: none;
+  border-radius: 14px;
+  background: var(--terracota);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 10px 30px rgba(184,58,20,.35);
+  transition: color .3s cubic-bezier(.16,1,.3,1),
+              transform .15s ease,
+              box-shadow .3s ease;
+}
+.btn-origin:hover  { box-shadow: 0 12px 34px rgba(212,175,55,.4); }
+.btn-origin:active { transform: scale(.985); }
+.btn-origin:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212,175,55,.45);
+}
+
+/* círculo que se expande desde el punto del cursor */
+.btn-origin-fill {
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  width: var(--size, 0px);
+  height: var(--size, 0px);
+  border-radius: 50%;
+  background: var(--dorado);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform .5s cubic-bezier(.16,1,.3,1);
+}
+.btn-origin.is-filled .btn-origin-fill {
+  transform: translate(-50%, -50%) scale(1);
+}
+/* al llenarse, el texto se vuelve azul para contrastar con el dorado */
+.btn-origin.is-filled { color: var(--azul); }
+
+.btn-origin-label {
+  position: relative;
+  z-index: 1;
+}
+
+/* respeta a quien prefiere menos animación */
+@media (prefers-reduced-motion: reduce) {
+  .btn-origin-fill { transition: none; }
+}

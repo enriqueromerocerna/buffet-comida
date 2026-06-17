@@ -289,3 +289,41 @@ document.addEventListener('keydown', function (e) {
 document.addEventListener('DOMContentLoaded', function () {
   renderGaleria('matrimonios');
 });
+
+/* ════════════════════════════════════════
+   BOTÓN "ORIGIN" — relleno desde el punto del cursor
+   ════════════════════════════════════════ */
+document.querySelectorAll('.btn-origin').forEach(function (btn) {
+  /* diámetro que cubre el botón desde el punto (x,y) */
+  function setOrigin(x, y) {
+    var r = btn.getBoundingClientRect();
+    var d = Math.ceil(2 * Math.max(
+      Math.hypot(x, y),
+      Math.hypot(r.width - x, y),
+      Math.hypot(x, r.height - y),
+      Math.hypot(r.width - x, r.height - y)
+    ));
+    btn.style.setProperty('--x', x + 'px');
+    btn.style.setProperty('--y', y + 'px');
+    btn.style.setProperty('--size', d + 'px');
+  }
+
+  btn.addEventListener('pointerenter', function (e) {
+    var r = btn.getBoundingClientRect();
+    setOrigin(e.clientX - r.left, e.clientY - r.top);
+    btn.classList.add('is-filled');
+  });
+  btn.addEventListener('pointerleave', function () {
+    btn.classList.remove('is-filled');
+  });
+
+  /* accesible por teclado: crece desde el centro al enfocar */
+  btn.addEventListener('focus', function () {
+    var r = btn.getBoundingClientRect();
+    setOrigin(r.width / 2, r.height / 2);
+    btn.classList.add('is-filled');
+  });
+  btn.addEventListener('blur', function () {
+    btn.classList.remove('is-filled');
+  });
+});
