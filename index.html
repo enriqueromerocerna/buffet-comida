@@ -256,6 +256,14 @@
     </div>
   </div>
 
+  <!-- Reseñas reales de clientes -->
+  <div id="resenas-reales" style="padding:20px 0 0;display:none;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 20px;">
+      <p class="section-label" style="color:var(--terracota);text-align:center;">Reseñas de nuestros clientes</p>
+      <div id="resenas-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:20px;"></div>
+    </div>
+  </div>
+
   <!-- CTA dejar reseña -->
   <div class="exp-cta">
     <p>¿Ya viviste la experiencia?</p>
@@ -617,6 +625,48 @@
 <script>
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyv12tQ6k8oImov35RIdIPbXjhrxszZu63_LZidDEakpYPL50VtaxUE_SoeT9PWLm_e2Q/exec";
 
+// Cargar reseñas desde Google Sheets al abrir la página
+function cargarResenas() {
+  fetch(SCRIPT_URL, { method: 'GET', mode: 'cors' })
+  .then(function(r) { return r.json(); })
+  .then(function(rows) {
+    if (!rows || rows.length === 0) return;
+    
+    var grid = document.getElementById('resenas-grid');
+    var container = document.getElementById('resenas-reales');
+    grid.innerHTML = '';
+    
+    rows.reverse().forEach(function(r) {
+      var estrellas = parseInt(r.estrellas) || 5;
+      var starsHtml = '★'.repeat(estrellas) + '☆'.repeat(5 - estrellas);
+      var inicial = (r.nombre || '?').charAt(0).toUpperCase();
+      var colores = ['#D4AF37','#B83A14','#1A2536'];
+      var color = colores[inicial.charCodeAt(0) % 3];
+      var personasText = r.personas ? ' · ' + r.personas + ' personas' : '';
+      var recomiendaHtml = r.recomienda === 'Sí' ? '<span style="color:#1a7a1a;font-size:12px;margin-top:6px;display:block;">✓ Recomienda el servicio</span>' : '';
+      
+      var card = document.createElement('div');
+      card.className = 't-card';
+      card.style.cssText = 'flex:none;width:100%;';
+      card.innerHTML = 
+        '<div class="t-stars" style="color:#D4AF37;">' + starsHtml + '</div>' +
+        '<p class="t-text">"' + r.comentario + '"</p>' +
+        recomiendaHtml +
+        '<div class="t-author"><div class="t-avatar" style="background:' + color + '">' + inicial + '</div>' +
+        '<div><strong>' + r.nombre + ' ' + r.apellido + '</strong>' +
+        '<small>Cliente verificado' + personasText + '</small></div></div>';
+      
+      grid.appendChild(card);
+    });
+    
+    container.style.display = 'block';
+  })
+  .catch(function(err) { console.log('Sin reseñas aún:', err); });
+}
+
+// Cargar al iniciar
+cargarResenas();
+
 function abrirFormResena() {
   document.getElementById('resena-overlay').style.display = 'block';
   document.body.style.overflow = 'hidden';
@@ -724,8 +774,13 @@ function agregarResenaAlMarquee(nombre, apellido, estrellas, comentario, persona
     '<div class="t-author"><div class="t-avatar" style="background:' + color + '">' + inicial + '</div>' +
     '<div><strong>' + nombre + ' ' + apellido + '</strong><small>Cliente verificado' + personasText + '</small></div></div>';
 
-  // Insertar en el primer marquee de sociales
-  var track = document.querySelector('#exp-social .marquee-track');
-  if (track) { track.insertBefore(card, track.firstChild); }
+  // Insertar en el grid de reseñas reales
+  var grid = document.getElementById('resenas-grid');
+  var container = document.getElementById('resenas-reales');
+  if (grid) {
+    card.style.cssText = 'flex:none;width:100%;';
+    grid.insertBefore(card, grid.firstChild);
+    container.style.display = 'block';
+  }
 }
 </script>
